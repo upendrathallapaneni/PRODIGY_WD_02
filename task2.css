@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+/* Stopwatch Card */
+
+.stopwatch-container {
+    background-color: #1e1e1e;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #a0a0a0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    margin: -0.75rem auto 1.5rem;
+    max-width: 320px;
+    color: #9aa0a6;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+
+/* Time Display */
+
+.display {
+    font-size: 3.5rem;
+    font-weight: 300;
+    font-variant-numeric: tabular-nums;
+    /* Prevents numbers from jumping around */
+    margin-bottom: 2rem;
+    color: #ffffff;
+}
+
+.display .ms {
+    font-size: 2rem;
+    color: #00adb5;
+}
+
+
+/* Controls */
+
+.controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex: 1;
+}
+
+.btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+
+/* Button Colors */
+
+.start {
+    background-color: #393e46;
+    color: #00adb5;
+}
+
+.start:hover:not(:disabled) {
+    background-color: #4f5661;
+}
+
+.pause {
+    background-color: #ff4d4d;
+    color: #fff;
+}
+
+.pause:hover:not(:disabled) {
+    background-color: #ff6666;
+}
+
+.lap {
+    background-color: #393e46;
+    color: #eeeeee;
+}
+
+.lap:hover:not(:disabled) {
+    background-color: #4f5661;
+}
+
+.reset {
+    background-color: #222831;
+    color: #7f8c8d;
+}
+
+.reset:hover:not(:disabled) {
+    background-color: #393e46;
+    color: #fff;
+}
+
+
+/* Laps Section */
+
+.laps-container {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 1rem;
+    border-top: 1px solid #333;
+    padding-top: 1rem;
+}
+
+
+/* Custom Scrollbar for Laps */
+
+.laps-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.laps-container::-webkit-scrollbar-thumb {
+    background-color: #333;
+    border-radius: 4px;
+}
+
+#lapsList {
+    list-style: none;
+}
+
+#lapsList li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    font-variant-numeric: tabular-nums;
+    font-size: 0.95rem;
+}
+
+#lapsList li:nth-child(odd) {
+    background-color: #252525;
+}
+
+.lap-number {
+    color: #777;
+}
+
+.lap-time {
+    color: #00adb5;
+    font-weight: 600;
+}
